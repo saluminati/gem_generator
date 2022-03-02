@@ -1,0 +1,5 @@
+# frozen_string_literal: true
+
+module <%= name.split('_').collect!{ |w| w.capitalize }.join %>
+  VERSION = '0.0.1'
+end

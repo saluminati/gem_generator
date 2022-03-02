@@ -1,0 +1,16 @@
+# frozen_string_literal: true
+
+<% if options[:use_rspec_suit] == 'true' %>
+require 'simplecov'
+require 'shoulda/matchers'
+<% end %>
+require '<%= name %>'
+<% if options[:use_rspec_suit] == 'true' %>
+SimpleCov.start
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+  end
+end
+<% end %>
